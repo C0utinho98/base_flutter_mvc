@@ -1,4 +1,4 @@
-import 'package:base/app/controllers/auth/auth_service.dart';
+import 'package:base/app/controllers/auth/auth_controller.dart';
 import 'package:base/app/views/pages/auth_screen.dart';
 import 'package:base/app/views/pages/home_screen.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:base/app/models/auth/auth_model.dart';
 import 'package:base/app/repositories/auth_repository.dart';
-import 'package:base/app/shared/local_storage/local_storage.dart';
+import 'package:base/app/services/local_storage.dart';
 import 'package:flutter/material.dart';
 
 class AuthController with ChangeNotifier {

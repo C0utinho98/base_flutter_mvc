@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1080306148002",
+    "project_id": "softdesign-dev",
+    "storage_bucket": "softdesign-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080306148002:android:93637e2f13c3316e152dfb",
+        "android_client_info": {
+          "package_name": "br.com.softdesign.flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080306148002-fokvigb4vbd5l1eqmb05pf9sqd023usm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1-GeYUwKZKNjcxoU14LyOyfPSy9re6qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080306148002-fokvigb4vbd5l1eqmb05pf9sqd023usm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

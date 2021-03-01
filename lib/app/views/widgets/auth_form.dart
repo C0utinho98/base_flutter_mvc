@@ -10,7 +10,6 @@ class AuthForm extends StatefulWidget {
 
 class _AuthFormState extends State<AuthForm> {
   AuthMode _authMode = AuthMode.Login;
-  final _passwordController = TextEditingController();
 
   void _switchMode() {
     if (_authMode == AuthMode.Login) {
@@ -35,45 +34,38 @@ class _AuthFormState extends State<AuthForm> {
       elevation: 8.0,
       child: Container(
         padding: EdgeInsets.all(16),
-        height: _authMode == AuthMode.Login ? 290 : 371,
+        height: _authMode == AuthMode.Login
+            ? deviceSize.height * 0.5
+            : deviceSize.height * 0.6,
         width: deviceSize.width * 0.75,
+        constraints: BoxConstraints(
+          maxHeight: _authMode == AuthMode.Login ? 300 : 390,
+        ),
         child: Form(
           key: _form.formKey,
           child: Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               TextFormField(
+                enableSuggestions: false,
+                autocorrect: false,
                 decoration: InputDecoration(labelText: 'E-mail'),
                 keyboardType: TextInputType.emailAddress,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return "Informe um e-mail válido!";
-                  }
-                  return null;
-                },
+                validator: (value) => _form.validationEmail(value),
                 onSaved: (value) => _form.setEmail(value),
               ),
               TextFormField(
                 decoration: InputDecoration(labelText: 'Senha'),
                 obscureText: true,
-                controller: _passwordController,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return "Campo senha é obrigatório";
-                  }
-                  return null;
-                },
+                controller: _form.passwordController,
+                validator: (value) => _form.validationPassword(value),
                 onSaved: (value) => _form.setPassword(value),
               ),
               if (_authMode == AuthMode.Signup)
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Confirmar senha'),
                   obscureText: true,
-                  validator: (value) {
-                    if (value != _passwordController.text) {
-                      return "Senhas sao diferentes";
-                    }
-                    return null;
-                  },
+                  validator: (value) => _form.validationComparePassword(value),
                 ),
               Spacer(),
               Observer(builder: (_) {

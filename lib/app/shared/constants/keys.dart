@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Key {
-  static const FIREBASE_KEY = 'AIzaSyDvFPZ2u_R1u55vWithp5ctn5QCt9HBxaU';
+  static const FIREBASE_KEY = 'AIzaSyB6YUpabBF4nqcpTl1Dab6Tp4YrkGcH7vc';
 }
